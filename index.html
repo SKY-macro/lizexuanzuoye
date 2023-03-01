@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="./JavaScript/nav.js" type="text/javascript"></script>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <link href="./Css/poster.css" rel="stylesheet">
+</head>
+<style>
+    .iconfont {
+        font-family: '华文行楷', serif;
+        font-weight: bold;
+    }
+
+    .ft {
+        transition: 0.5s;
+
+    }
+
+    .ft:hover {
+        transform: scale(1.05);
+        cursor: pointer;
+
+    }
+
+    .ft1 {
+        transition: 0.5s;
+
+    }
+
+    .ft1:hover {
+        transform: scale(1.03);
+        cursor: pointer;
+
+    }
+
+    .sz {
+        display: inline-block;
+
+    }
+
+    .sft ul {
+        list-style: none;
+    }
+
+
+    .sft div {
+        width: 1200px;
+        height: 400px;
+        margin: 50px auto;
+
+        overflow: hidden;
+    }
+
+    .sft div li {
+        width: 240px;
+        height: 400px;
+        float: left;
+        transition: all 500ms;
+    }
+
+    .sft div ul {
+        width: 1200px;
+    }
+
+    * {
+
+        margin: 0;
+
+        padding: 0;
+
+        text-decoration: none;
+
+        list-style: none;
+
+    }
+
+    .textnone {
+        text-decoration: none;
+        color: black;
+    }
+
+    .header {
+        display: flex;
+        width: auto;
+        height: 36px;
+        padding: 0 38px 0 36px;
+        background-color: #f5f5f5;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .header ul {
+        display: flex;
+
+    }
+
+    .rightheader {
+        font-size: 12px;
+        display: flex;
+    }
+
+    .rightheader ul {
+    }
+
+    .nav {
+        width: auto;
+        height: 60px;
+        background-color: #ffffff;
+        margin: 0 340px 0 340px;
+        text-align: center;
+    }
+
+    /*    如何设置浮动后 让ul里面的li居中
+ https://www.cnblogs.com/zempty/p/4298343.html
+
+ */
+    @media screen and (max-width: 1440px) {
+        .nav {
+            width: 0;
+            display: none;
+            text-align: center;
+
+
+        }
+
+        .fiveth {
+
+            margin: 40px 0 0 0;
+        }
+    }
+
+    .nav ul {
+
+        display: inline-block
+    }
+
+    .nav li {
+
+        line-height: 28px;
+        text-decoration: none solid rgb(17, 17, 17);
+        font-size: 16px;
+        float: left;
+        display: inline-block;
+        padding: 16px 12px 18px 12px;
+    }
+
+    .notice {
+        width: auto;
+        height: 28px;
+        text-align: center;
+        line-height: 24px;
+        font-size: 12px;
+
+
+    }
+
+    .main {
+        width: auto;
+
+    }
+
+
+    .Cw1 {
+        height: 88px;
+        line-height: 44px;
+        font-size: 32px;
+        text-align: center;
+        font-weight: 500;
+        font-family: "Microsoft YaHei UI", 雅黑, serif;
+
+    }
+
+    .Cw2 {
+        line-height: 24px;
+        text-align: center;
+        font-size: 16px;
+        font-family: "Microsoft YaHei UI", 雅黑, serif;
+        margin-top: 18px;
+    }
+
+    /*万能CSS如何设置div水平居中 https://www.php.cn/css-tutorial-473702.html#:~:text=CSS%E8%AE%BE%E7%BD%AEdiv%E6%B0%B4%E5%B9%B3%E5%B1%85%E4%B8%AD%E7%9A%84%E6%96%B9%E6%B3%95%EF%BC%9A1%E3%80%81%E7%BB%99div%E5%85%83%E7%B4%A0%E8%AE%BE%E7%BD%AE%E2%80%9Cmargin%3A%200%20auto%E2%80%9D%E6%A0%B7%E5%BC%8F%EF%BC%9B2%E3%80%81%E5%9C%A8%E7%88%B6%E7%BA%A7div%E5%85%83%E7%B4%A0%E9%87%8C%E8%AE%BE%E7%BD%AE%E2%80%9Ctext-align%3A%20center%E2%80%9D%E6%A0%B7%E5%BC%8F%EF%BC%8C%E5%9C%A8%E5%AD%90%E4%B8%80%E7%BA%A7div%E5%85%83%E7%B4%A0%E9%87%8C%E8%AE%BE%E7%BD%AE%E2%80%9Cdisplay%3A,inline-block%E2%80%9D%E6%A0%B7%E5%BC%8F%E3%80%82%20%E6%9C%AC%E6%95%99%E7%A8%8B%E6%93%8D%E4%BD%9C%E7%8E%AF%E5%A2%83%EF%BC%9Awindows7%E7%B3%BB%E7%BB%9F%E3%80%81CSS3%26%26HTML5%E7%89%88%E3%80%81Dell%20G3%E7%94%B5%E8%84%91%E3%80%82%201%E3%80%81%E5%A4%96%E8%BE%B9%E8%B7%9D%E8%87%AA%E9%80%82%E5%BA%94*/
+    /*CSS设置div水平居中的方法：
+第一种、给div元素设置“margin: 0 auto”样式；
+第二种、 适用于内联元素 在父级div元素里设置“text-align: center”样式，在子一级div元素里设置“display: inline-block”样式。*/
+    .Cw3 {
+
+        text-align: center;
+        margin-top: 18px;
+        margin-bottom: 36px;
+    }
+
+    .Cw3 div {
+        padding: 6px 20px;
+        margin: 0 auto;
+        border-radius: 30px;
+        display: inline-block;
+        background: black;
+        color: white;
+
+    }
+
+    .second {
+
+        width: auto;
+        margin: 0 48px;
+        line-height: 28px;
+        font-size: 24px;
+
+    }
+
+    .second span {
+        margin-top: 60px;
+        margin-bottom: 15px;
+        display: block;
+    }
+
+    .second .threepic {
+        /*给外部盒子一个flex即可实现均等分*/
+        display: flex;
+    }
+
+    .second .threepic img
+
+        /*    图片超出盒子*/
+    {
+        width: 32.5%;
+        margin-right: 17px;
+        overflow: hidden;
+    }
+
+    .video {
+        margin-top: 30px;
+    }
+
+    .third {
+
+        margin: 40px 48px 0 48px;
+        display: flex;
+    }
+
+    .third img {
+        width: 49.4%;
+    }
+
+    .fouth {
+        width: auto;
+        margin: 0 48px;
+        line-height: 28px;
+        font-size: 24px;
+
+    }
+
+    .fouth img {
+        width: 100%;
+        display: flex;
+    }
+
+    .fouth span {
+        margin-top: 60px;
+        margin-bottom: 15px;
+        display: block;
+    }
+
+    .fiveth {
+        margin: 40px 276px 0 276px;
+        padding: 0 20px;
+
+    }
+
+    @media screen and (max-width: 1440px) {
+
+        .fiveth {
+            text-align: center;
+            margin: 40px 0 0 0;
+        }
+    }
+
+    .fiveth .ul1 {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+    }
+
+    .fiveth .ul1 .li1 {
+
+        width: 20%;
+        display: flex;
+        margin-bottom: 48px;
+        flex-direction: column;
+    }
+
+    .li1 span {
+        margin-bottom: 24px;
+
+    }
+
+    .li1 ul li {
+        margin-top: 12px;
+        color: #cccccc;
+    }
+
+    .footer {
+        width: auto;
+        height: 327px;
+
+        padding: 40px 56px 0 56px;
+        background-color: black;
+
+    }
+
+    .footer .up .list
+
+        /*少使用ul因为会影响全局*/
+    {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between
+    }
+
+    .up ul li span {
+
+        color: white;
+        display: inline-block;
+        margin-bottom: 0;
+    }
+
+    .up li {
+    }
+
+    .up li img {
+    }
+
+    .list2 {
+        display: flex;
+        flex-direction: column;
+        color: white;
+        font-size: 14px;
+        line-height: 24px;
+        text-align: left;
+
+    }
+
+    .list3 li {
+        margin: 10px 0;
+        font-size: 14px;
+        line-height: 24px;
+    }
+
+    .gethelp {
+        height: 28px;
+        display: flex;
+        flex-direction: column;
+        line-height: 24px;
+        font-size: 14px;
+        color: #cccccc;
+
+    }
+
+    .gethelp li {
+        font-size: 12px;
+        line-height: 24px;
+        height: 28px;
+        margin: 3px 0;
+    }
+
+    .down {
+        margin-top: 110px;
+        height: 100px;
+        display: flex;
+        align-items: flex-end;
+    }
+
+    .down span {
+        display: inline-block;
+
+    }
+</style>
+<body>
+<div class="header">
+    <ul>
+
+        <span class="sz iconfont"></span>
+        <span style=" margin-left:20px;margin-top: -2px; font-family:'Felix Titling',serif;font-weight: bold ">寻找周杰伦</span>
+    </ul>
+    <div class="rightheader">
+        <ul>
+            <a class="textnone" href="https://www.nike.com.cn/help">
+                <li style="">帮助</li>
+            </a>
+            <li style="padding: 0 12px;">|</li>
+            <a class="textnone" href="https://www.nike.com.cn/membership">
+                <li>立即加入</li>
+            </a>
+
+
+            <li style="padding: 0 12px;">|</li>
+            <a class="textnone"
+               href="https://accounts.nike.com.cn/lookup?client_id=e5517bcc26532d959b2532654ac037dd&redirect_uri=https://www.nike.com.cn/auth/login&response_type=code&scope=openid%20nike.digital%20profile%20email%20phone%20flow%20country&state=a83254c66dc44a589fa929d29e534e48&code_challenge=WTpv8ooYG-TC26YY-Jm5VyWOgruRZ4R0Auz3cOa6JU0&code_challenge_method=S256">
+                <li>登录</li>
+            </a>
+
+        </ul>
+
+    </div>
+</div>
+<div class="nav">
+    <ul>
+        <li>海口站</li>
+        <li>天津站</li>
+        <li>呼和浩特站</li>
+        <li>大麦购票</li>
+        <li>抢先爆料</li>
+        <li>周边定制</li>
+        <li>Jay Chou</li>
+    </ul>
+</div>
+<div class="notice" style=" margin-top:2px; font-family: '思源屏显臻宋 CN',serif">
+    周杰伦嘉年华世界巡回演唱会
+</div>
+<div class="main">
+    <div class="poster">
+        <a href="https://www.nike.com.cn/w/cn-cny-all-pw-ewem"> <img alt="" src="./Image/周杰伦.png" style="="></a>
+
+    </div>
+    <div class="Cw1">
+        <br>
+        <!--        细节换行改行高-->
+        哎呦 不错哦
+    </div>
+    <div class="Cw2">走？一起去看杰伦演唱会！</div>
+    <div class="Cw3">
+        <div>解锁「Jay Chou」系列</div>
+    </div>
+
+    <img alt="" src="./Image/杰伦2.png" style="width: 100%">
+    <div class="Cw1">
+        <br>
+        <!--        细节换行改行高-->
+        从前从前｜一路向北
+    </div>
+    <div class="Cw2">杰伦专辑，哪一张是你的最爱</div>
+    <div class="Cw3">
+        <div>即刻探索</div>
+    </div>
+    <div class="second iconfont"><span>范特西</span>
+        <div class="threepic">
+
+            <img alt="" class="ft"
+                 src="./Image/杰伦图片/55e33e10403c64944ed41786949bf21d305d9119.png@942w_1263h_progressive.webp">
+            <img alt="" class="ft"
+                 src="./Image/杰伦图片/35891e641e8394e6e9af127daf9128e5f965b333.png@942w_1080h_progressive.webp">
+            <img alt="" class="ft" src="./Image/杰伦图片/范特西.png">
+        </div>
+
+
+    </div>
+
+
+</div>
+<div class="second iconfont"><span>七里香/JAY/我很忙</span>
+    <div class="threepic">
+        <img alt="" class="ft"
+             src="./Image/杰伦图片/f6058dd777d2c4b2f544d19bcc59b39f91c27f29.png@942w_1044h_progressive.webp">
+        <img alt="" class="ft"
+             src="./Image/杰伦图片/a41384d2ca1a7f75f16b9d3177ae5a373adbc1f1.png@942w_1029h_progressive.webp">
+        <img alt="" class="ft"
+             src="./Image/杰伦图片/ebe325d3f9514bc28891647845614715d5873a6d.png@942w_1259h_progressive.webp">
+    </div>
+
+</div>
+=
+
+
+</div>
+<div class="second iconfont"><span>八度空间/哎呦不错哦/床边故事</span>
+    <div class="threepic">
+
+        <img alt="" class="ft"
+             src="./Image/杰伦图片/b974a493b3a4938f45f28cf9d4a120e600a93490.png@942w_1062h_progressive.webp">
+        <img alt="" class="ft"
+             src="./Image/杰伦图片/8522bf896421d477ffa7c0163be454564912d38b.png@942w_942h_progressive.webp">
+        <img alt="" class="ft" src="./Image/杰伦图片/床边故事.png">
+
+    </div>
+
+</div>
+
+</div></div>
+<div class="fouth iconfont" style="margin-bottom: 20px">
+
+    <span>杰迷专属福利</span>
+    <div style="display: flex ">
+        <img alt="" class="ft1" src="./Image/杰伦图片/杰伦福利.png" style="width: 50% ;margin-right: 10px ">
+        <img alt="" class="ft1" src="./Image/杰伦图片/杰伦福利2.png" style="width: 50%;  ">
+    </div>
+
+</div>
+<div class="footer">
+    <div class="up">
+        <ul class="list">
+            <li class="list2"><span>电子礼品卡</span>
+                <ul class="list3">
+                    <li>企业团购</li>
+                    <li>注册Jay会员</li>
+                </ul>
+            </li>
+
+            <li><span>获得帮助</span>
+                <ul class="gethelp">
+                    <li>订单状态</li>
+                    <li>配送方式</li>
+                    <li>退换货</li>
+                    <li>付款选项</li>
+                    <li>联系我们</li>
+
+                </ul>
+            </li>
+
+            <li><span>关于JayChou</span>
+                <ul class="gethelp">
+                    <li>订单状态</li>
+                    <li>配送方式</li>
+
+
+                </ul>
+
+
+            </li>
+            <li></li>
+            <li></li>
+
+            <li></li>
+
+            <li><img alt="" src="./Image/微信icon.png">
+                <img alt="" src="./Image/新浪微博.png">
+            </li>
+        </ul>
+
+    </div>
+    <div class="down">
+        <img alt="" src="./Image/位置.png" style="padding-right: 16px; width: 12px">
+        <span style="color: white ;font-size: 12px">中国大陆</span>
+        <span style="font-size: 12px ;color: #bbbbbb ;padding-left: 16px">© 2023 JayChou, Inc. 保留所有权利</span>
+    </div>
+</div>
+</body>
+<script !src="">
+    var spn = document.querySelector('span');
+    setInterval(getTime, 1000);
+
+    function getTime() {
+        var data = new Date();
+        var year = data.getFullYear();
+        var month = data.getMonth() + 1;
+        var day = data.getDate();
+        var week = data.getDay() + 1;
+        var hours = data.getHours();
+        var minutes = data.getMinutes();
+        var seconds = data.getSeconds();
+        spn.innerHTML = year + '年' + month + '月' + day + '日' + '星期' + week + '  ' + ' ｜' + hours + ':' + minutes + ':' + seconds;
+
+    }
+</script>
+</html>
